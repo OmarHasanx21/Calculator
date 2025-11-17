@@ -4,6 +4,7 @@ function overflowtest() {
 }
 function test() {
   if (1 == 1) {
-    return true;
+    alert("test");
   }
 }
+test();
