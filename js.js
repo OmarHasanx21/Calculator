@@ -3,5 +3,5 @@ function overflowtest() {
   document.getElementById("ResultScreen").innerHTML = s;
 }
 function test() {
-  return true;
+  return false;
 }
