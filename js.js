@@ -3,7 +3,7 @@ function overflowtest() {
   document.getElementById("ResultScreen").innerHTML = s;
 }
 function test() {
-  if (1 == 1) {
+  if (true) {
     alert("test");
   }
 }
