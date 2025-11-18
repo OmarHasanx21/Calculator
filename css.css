@@ -44,3 +44,8 @@
   background-color: rgba(235, 235, 235, 0.8);
   border: 0px;
 }
+
+#buttonsDiv {
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
