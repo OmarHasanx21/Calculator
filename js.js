@@ -114,9 +114,9 @@ function GetResult() {
     let output = new Function("return " + ResultScreen.innerHTML)();
 
     ResultScreen.innerHTML = "" + output.toFixed(4);
-    Cal = [parseFloat(output.toFixed(4))];
+    Cal = parseFloat(output.toFixed(4)).split("");
     // After a result, the new number starts here
-    currentnumber = parseFloat(output.toFixed(4));
+    currentnumber = parseFloat(output.toFixed(4)).split("");
   }
 }
 
