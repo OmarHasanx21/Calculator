@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>Calculator</title>
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
     <link rel="stylesheet" href="css.css" />
   </head>
   <body>
@@ -14,145 +15,164 @@
             type="button"
             class="ButtonDefault"
             id="BackSpace"
-            onclick="Calculator(this.id)"
+            data-value="BackSpace"
+            data-type="operator"
           />
           <input
             type="button"
             class="ButtonDefault"
             value="C"
             id="Clear"
-            onclick="Calculator(this.id)"
+            data-value="Clear"
+            data-type="operator"
           />
           <input
             type="button"
             class="ButtonDefault"
             value="%"
             id="Percentage"
-            onclick="Calculator(this.id)"
+            data-value="%"
+            data-type="operator"
           />
           <input
             type="button"
             class="ButtonDefault"
             value="÷"
             id="Devide"
-            onclick="Calculator(this.id)"
+            data-value="/"
+            data-type="operator"
           />
           <input
             type="button"
             class="ButtonDefault"
             value="7"
             id="_7"
-            onclick="Calculator(this.id)"
+            data-value="7"
+            data-type="number"
           />
           <input
             type="button"
             class="ButtonDefault"
             value="8"
             id="_8"
-            onclick="Calculator(this.id)"
+            data-value="8"
+            data-type="number"
           />
           <input
             type="button"
             class="ButtonDefault"
             value="9"
             id="_9"
-            onclick="Calculator(this.id)"
+            data-value="9"
+            data-type="number"
           />
           <input
             type="button"
             class="ButtonDefault"
             value="×"
             id="Times"
-            onclick="Calculator(this.id)"
+            data-value="*"
+            data-type="operator"
           />
           <input
             type="button"
             class="ButtonDefault"
             value="4"
             id="_4"
-            onclick="Calculator(this.id)"
+            data-value="4"
+            data-type="number"
           />
           <input
             type="button"
             class="ButtonDefault"
             value="5"
             id="_5"
-            onclick="Calculator(this.id)"
+            data-value="5"
+            data-type="number"
           />
           <input
             type="button"
             class="ButtonDefault"
             value="6"
             id="_6"
-            onclick="Calculator(this.id)"
+            data-value="6"
+            data-type="number"
           />
           <input
             type="button"
             class="ButtonDefault"
             value="-"
             id="minus"
-            onclick="Calculator(this.id)"
+            data-value="-"
+            data-type="operator"
           />
           <input
             type="button"
             class="ButtonDefault"
             value="1"
             id="_1"
-            onclick="Calculator(this.id)"
+            data-value="1"
+            data-type="number"
           />
           <input
             type="button"
             class="ButtonDefault"
             value="2"
             id="_2"
-            onclick="Calculator(this.id)"
+            data-value="2"
+            data-type="number"
           />
           <input
             type="button"
             class="ButtonDefault"
             value="3"
             id="_3"
-            onclick="Calculator(this.id)"
+            data-value="3"
+            data-type="number"
           />
           <input
             type="button"
             class="ButtonDefault"
             value="+"
             id="Plus"
-            onclick="Calculator(this.id)"
+            data-value="+"
+            data-type="operator"
           />
           <input
             type="button"
             class="ButtonDefault"
             value="(+)"
             id="braces"
-            onclick="Calculator(this.id)"
+            data-value="()"
+            data-type="operator"
           />
           <input
             type="button"
             class="ButtonDefault"
             value="0"
             id="_0"
-            onclick="Calculator(this.id)"
+            data-value="0"
+            data-type="number"
           />
           <input
             type="button"
             class="ButtonDefault"
             value="."
             id="Point"
-            onclick="Calculator(this.id)"
+            data-value="."
+            data-type="decimal"
           />
           <input
             type="button"
             class="ButtonDefault"
             value="="
             id="Equal"
-            onclick="Calculator(this.id)"
+            data-value="="
+            data-type="operator"
           />
         </div>
       </div>
     </div>
-
     <script src="js.js"></script>
   </body>
 </html>
