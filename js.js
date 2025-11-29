@@ -88,8 +88,14 @@ function Calculator(bvalue, btype) {
       if (currentnumber.includes(".")) {
         return;
       } else {
-        Cal.push(bvalue);
-        currentnumber.push(bvalue);
+        if (currentnumber.length == 0) {
+          Cal.push("0", ".");
+          currentnumber.push("0", ".");
+          break;
+        } else {
+          Cal.push(bvalue);
+          currentnumber.push(bvalue);
+        }
       }
 
       break;
@@ -110,27 +116,35 @@ function DrawResult() {
 
 //calculat the result function
 function GetResult() {
-  if (ResultScreen.innerHTML) {
-    let output = new Function("return " + ResultScreen.innerHTML)();
+  let expression = Cal.join("");
+  if (expression) {
+    try {
+      // clean the expression to only allow numbers, operators, and dots.
+      if (/^[\d\.\+\-\*\/\%]+$/.test(expression)) {
+        let output = eval(expression);
 
-    ResultScreen.innerHTML = "" + output.toFixed(4);
-    Cal = parseFloat(output.toFixed(4)).split("");
-    // After a result, the new number starts here
-    currentnumber = parseFloat(output.toFixed(4)).split("");
-  }
-}
+        // Handle division by zero or other invalid results
+        if (!isFinite(output)) {
+          ResultScreen.innerHTML = "Error";
+          Cal = [];
+          currentnumber = [];
+          return;
+        }
 
-function isOperator(value) {
-  if (
-    value == "+" ||
-    value == "-" ||
-    value == "*" ||
-    value == "/" ||
-    value == "%"
-  ) {
-    return value;
-  } else {
-    return false;
+        const resultString = output.toFixed(4).replace(/\.?0+$/, ""); // Keep it a string and remove  zeros
+        ResultScreen.innerHTML = resultString;
+        Cal = resultString.split("");
+        currentnumber = resultString.split("");
+      } else {
+        ResultScreen.innerHTML = "Error";
+        Cal = [];
+        currentnumber = [];
+      }
+    } catch (e) {
+      ResultScreen.innerHTML = "Error";
+      Cal = [];
+      currentnumber = [];
+    }
   }
 }
 //setInterval(DrawResult(), 200);
